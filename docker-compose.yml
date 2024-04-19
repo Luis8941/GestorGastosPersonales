@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+ database:
+   image: mysql:latest
+   container_name: mysql_db
+   environment:
+    MYSQL_ROOT_PASSWORD: 1234
+    MYSQL_DATABASE: ahorro_app
+   volumes:
+     - ./schema.sql:/docker-entrypoint-initdb.d/schema.sql
+   ports:
+    - "3306:3306"
