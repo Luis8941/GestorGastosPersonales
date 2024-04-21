@@ -11,3 +11,22 @@ services:
      - ./schema.sql:/docker-entrypoint-initdb.d/schema.sql
    ports:
     - "3306:3306"
+   networks:
+    - database-network
+
+ phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: database  # Nombre del servicio del contenedor de MySQL al que phpMyAdmin se conectará
+      PMA_USER: root          # Usuario de MySQL
+      PMA_PASSWORD: 1234  # Contraseña de MySQL
+      PMA_ARBITRARY: 1        # Habilitar la opción de introducir cualquier valor en el campo de servidor
+    networks:
+     - database-network
+
+networks:
+  database-network:
+    driver: bridge
