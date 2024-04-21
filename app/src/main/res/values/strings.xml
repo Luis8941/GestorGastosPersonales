@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">GastosPersonales</string>
+    <string name="app_title_r">Listado de Recordatorios</string>
+    <string name="recordatorio_cr">Crear Recordatorio</string>
+    <string name="nombre_r">Nombre del Recordatorio</string>
+    <string name="frecuencia_r">Frecuencia</string>
+    <string name="fecha_r">Fecha</string>
+    <string name="hora_r">Hora</string>
+    <string name="btn_guardar_r">Guardar</string>
+    <string name="btn_agregar_r">Agregar</string>
+    <string name="bar_recordatorio">Listado de Recordatorio</string>
 </resources>
