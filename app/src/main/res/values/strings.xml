@@ -9,4 +9,10 @@
     <string name="btn_guardar_r">Guardar</string>
     <string name="btn_agregar_r">Agregar</string>
     <string name="bar_recordatorio">Listado de Recordatorio</string>
+    <string name="app_title_cr">Crear de Recordatorios</string>
+    <string name="nombre_recordatorio">Nombre Recordatorio</string>
+    <string name="frecuencia_cr">Frecuencia Recordatorio:</string>
+    <string name="fecha_cr">Fecha Recordatorio:</string>
+    <string name="hora_cr">Hora Recordatorio:</string>
+    <string name="btn_guardar_cr">Guardar</string>
 </resources>

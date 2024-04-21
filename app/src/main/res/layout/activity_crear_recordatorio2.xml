@@ -6,4 +6,145 @@
     android:layout_height="match_parent"
     tools:context=".CrearRecordatorioActivity2">
 
+    <TextView
+        android:id="@+id/nom_fecha"
+        android:layout_width="162dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="185dp"
+        android:text="@string/fecha_cr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/digite_frecu" />
+
+    <TextView
+        android:id="@+id/nom_hora"
+        android:layout_width="162dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="185dp"
+        android:text="@string/fecha_cr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDate2" />
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/CrearRecordatorio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#03113A"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/app_title_cr"
+        app:titleTextColor="@color/white" />
+
+    <TextView
+        android:id="@+id/nom_frecu"
+        android:layout_width="162dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="185dp"
+        android:text="@string/frecuencia_cr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/digite_nom" />
+
+    <TextView
+        android:id="@+id/nom_recor"
+        android:layout_width="162dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="185dp"
+        android:text="@string/nombre_recordatorio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CrearRecordatorio" />
+
+    <EditText
+        android:id="@+id/digite_frecu"
+        android:layout_width="207dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="140dp"
+        android:background="#E2E2E2"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Digite la frecuencia"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nom_frecu" />
+
+    <EditText
+        android:id="@+id/digite_nom"
+        android:layout_width="247dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="100dp"
+        android:background="#E2E2E2"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Digite el nombre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nom_recor" />
+
+    <Button
+        android:id="@+id/btn_guardar"
+        android:layout_width="106dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="60dp"
+        android:background="#03113A"
+        android:backgroundTint="#03113A"
+        android:text="@string/btn_guardar_cr"
+        app:iconTint="#03113A"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.934"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTime"
+        app:layout_constraintVertical_bias="1.0"
+        app:rippleColor="#03113A"
+        app:strokeColor="#03113A" />
+
+    <EditText
+        android:id="@+id/editTextDate2"
+        android:layout_width="207dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="140dp"
+        android:ems="10"
+        android:inputType="date"
+        android:background="#E2E2E2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nom_fecha" />
+
+    <EditText
+        android:id="@+id/editTextTime"
+        android:layout_width="207dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="140dp"
+        android:ems="10"
+        android:inputType="time"
+        android:background="#E2E2E2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nom_hora" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

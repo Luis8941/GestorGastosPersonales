@@ -16,9 +16,12 @@
             android:name=".CrearRecordatorioActivity2"
             android:exported="false" />
         <activity
+<<<<<<< Updated upstream
             android:name=".recordatorioActivity2"
             android:exported="false" />
         <activity
+=======
+>>>>>>> Stashed changes
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
