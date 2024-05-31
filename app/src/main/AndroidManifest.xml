@@ -13,6 +13,13 @@
         android:theme="@style/Theme.GastosPersonales"
         tools:targetApi="31">
         <activity
+            android:name=".gastos"
+            android:exported="false" />
+        <activity
+            android:name=".ui.login.login"
+            android:exported="false"
+            android:label="@string/title_activity_login" />
+        <activity
             android:name=".CrearRecordatorioActivity2"
             android:exported="false" />
         <activity
