@@ -10,10 +10,14 @@
     <string name="btn_agregar_r">Agregar</string>
     <string name="bar_recordatorio">Listado de Recordatorio</string>
     <string name="app_title_cr">Crear de Recordatorios</string>
-    <string name="nombre_recordatorio">Nombre Recordatorio</string>
+    <string name="nombre_recordatorio">Nombre Recordatorio:</string>
+    <string name="digite_nombre">Digite el Nombre</string>
     <string name="frecuencia_cr">Frecuencia Recordatorio:</string>
+    <string name="digite_frecuencia">Seleccione la Frecuencia</string>
     <string name="fecha_cr">Fecha Recordatorio:</string>
+    <string name="digite_fecha">Selecione la Fecha</string>
     <string name="hora_cr">Hora Recordatorio:</string>
+    <string name="digite_hora">Digite la hora</string>
     <string name="btn_guardar_cr">Guardar</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">Email</string>

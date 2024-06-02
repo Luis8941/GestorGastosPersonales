@@ -6,50 +6,49 @@
     android:layout_height="match_parent"
     tools:context=".recordatorioActivity2">
 
-    <Button
-        android:id="@+id/btn_agregar_r"
-        android:layout_width="105dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="265dp"
-        android:layout_marginEnd="41dp"
-        android:layout_marginBottom="52dp"
-        android:background="#03113A"
-        android:text="@string/btn_agregar_r"
-        android:textColorHighlight="#03113A"
-        android:textColorLink="#03113A"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:titleTextColor="#FFFFFF"
-        tools:ignore="MissingConstraints" />
-
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/recordatorioListToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#03113A"
+        android:background="@color/bluedrark"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:title="@string/app_title_r"
-        app:titleTextColor="#FFFFFF"/>
+        app:titleTextColor="@color/white"/>
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:constraint_referenced_ids="recordatorioListToolbar,listView" />
+        app:constraint_referenced_ids="recordatorioListToolbar" />
 
-    <ListView
-        android:id="@+id/listView"
-        android:layout_width="412dp"
-        android:layout_height="516dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listRecyclerRecordatorio"
+        android:layout_width="409dp"
+        android:layout_height="556dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="1dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recordatorioListToolbar"/>
+        app:layout_constraintTop_toBottomOf="@+id/recordatorioListToolbar" />
+
+    <Button
+        android:id="@+id/btn_agregar_r"
+        android:layout_width="105dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="265dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginBottom="28dp"
+        android:background="@color/bluedrark"
+        android:text="@string/btn_agregar_r"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:titleTextColor="@color/white"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
