@@ -26,7 +26,7 @@
         android:layout_width="162dp"
         android:layout_height="32dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="185dp"
         android:text="@string/nombre_recordatorio"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,7 +54,7 @@
         android:layout_width="162dp"
         android:layout_height="32dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="185dp"
         android:text="@string/frecuencia_cr"
         app:layout_constraintEnd_toEndOf="parent"
@@ -82,7 +82,7 @@
         android:layout_width="162dp"
         android:layout_height="32dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="185dp"
         android:text="@string/fecha_cr"
         app:layout_constraintEnd_toEndOf="parent"
@@ -112,7 +112,7 @@
         android:layout_width="162dp"
         android:layout_height="32dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="185dp"
         android:text="@string/hora_cr"
         app:layout_constraintEnd_toEndOf="parent"
@@ -135,6 +135,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nom_hora" />
 
+    <TextView
+        android:id="@+id/monto_r"
+        android:layout_width="162dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="185dp"
+        android:text="@string/monto_re"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTime" />
+
+    <EditText
+        android:id="@+id/add_monto"
+        android:layout_width="247dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="140dp"
+        android:background="@drawable/edit_text_border"
+        android:ems="10"
+        android:hint="@string/digite_monto"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/monto_r" />
+
     <Button
         android:id="@+id/btn_guardar"
         android:layout_width="106dp"
@@ -147,10 +175,10 @@
         app:iconTint="#03113A"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.896"
+        app:layout_constraintHorizontal_bias="0.893"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTime"
-        app:layout_constraintVertical_bias="0.427"
+        app:layout_constraintTop_toBottomOf="@+id/add_monto"
+        app:layout_constraintVertical_bias="0.364"
         app:rippleColor="#03113A"
         app:strokeColor="#03113A" />
 

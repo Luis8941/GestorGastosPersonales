@@ -10,8 +10,10 @@ class RecordatorioViewHolder(view: View): RecyclerView.ViewHolder(view) {
 
     val  nombreRe = view.findViewById<TextView>(R.id.nombre_r)
     val  fechaRe = view.findViewById<TextView>(R.id.fecha_r)
+    val  montoRe = view.findViewById<TextView>(R.id.monto)
     fun render(recordatorio: Recordatorio) {
         nombreRe.text = recordatorio.nombreR
         fechaRe.text = recordatorio.fecha
+        montoRe.text = recordatorio.monto.toString()
     }
 }

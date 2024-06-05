@@ -16,7 +16,7 @@ class DataHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME, nul
 
     companion object{
         private const val DATABASE_NAME = "gestorPresonalApp.db"
-        private const val DATABASE_VERSION = 1
+        private const val DATABASE_VERSION = 2
 
         // definiendo nombres de la tabla categoria
         private const val TABLE_FRECUENCIA = "Frecuencia"
@@ -30,6 +30,7 @@ class DataHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME, nul
         private const val COLUMN_RECORDATORIO_NOMBRE = "nombre"
         private const val COLUMN_RECORDATORIO_FEHA_RECORDATORIO = "fecha_recordatorio"
         private const val COLUMN_RECORDATORIO_HORA_RECORDATORIO = "hora_recordatorio"
+        private const val COLUMN_RECORDATORIO_MONTO_RECORDATORIO = "monto_recordatorio"
     }
 
     override fun onCreate(db: SQLiteDatabase) {
@@ -48,6 +49,7 @@ class DataHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME, nul
                 +"$COLUMN_RECORDATORIO_NOMBRE TEXT NOT NULL,"
                 +"$COLUMN_RECORDATORIO_FEHA_RECORDATORIO TEXT NOT NULL,"
                 +"$COLUMN_RECORDATORIO_HORA_RECORDATORIO TEXT NOT NULL,"
+                        +"$COLUMN_RECORDATORIO_MONTO_RECORDATORIO DECIMAL(10,2) NOT NULL,"
                         +"FOREIGN KEY ($COLUMN_RECORDATORIO_IDFRECUENCIA) REFERENCES $TABLE_FRECUENCIA($COLUMN_FRECUENCIA_IDFRECUENCIA)"
                 +")"
                 )
@@ -104,7 +106,7 @@ class DataHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME, nul
         return frecuenciaList
     }
 
-    fun addRecordatorio(idFrecuencia : Int, nombre : String, fecha : String, hora : String){
+    fun addRecordatorio(idFrecuencia : Int, nombre : String, fecha : String, hora : String, monto : Double){
         val values = ContentValues()
         values.put(COLUMN_RECORDATORIO_IDFRECUENCIA, idFrecuencia)
         values.put(COLUMN_RECORDATORIO_NOMBRE, nombre)
@@ -114,6 +116,7 @@ class DataHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME, nul
         //val timeFormat = SimpleDateFormat("HH:mm", Locale.getDefault())
         //val horaStr = timeFormat.format(hora)
         values.put(COLUMN_RECORDATORIO_HORA_RECORDATORIO, hora)
+        values.put(COLUMN_RECORDATORIO_MONTO_RECORDATORIO, monto)
 
         val db = this.writableDatabase
         db.insert(TABLE_RECORDATORIO, null, values)
@@ -126,7 +129,8 @@ class DataHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME, nul
                 "$TABLE_RECORDATORIO.$COLUMN_RECORDATORIO_IDFRECUENCIA," +
                 " $TABLE_RECORDATORIO.$COLUMN_RECORDATORIO_NOMBRE, "+
                 "$TABLE_RECORDATORIO.$COLUMN_RECORDATORIO_FEHA_RECORDATORIO, " +
-                "$TABLE_RECORDATORIO.$COLUMN_RECORDATORIO_HORA_RECORDATORIO " +
+                "$TABLE_RECORDATORIO.$COLUMN_RECORDATORIO_HORA_RECORDATORIO, " +
+                "$TABLE_RECORDATORIO.$COLUMN_RECORDATORIO_MONTO_RECORDATORIO " +
                 "FROM $TABLE_RECORDATORIO INNER JOIN $TABLE_FRECUENCIA "+
                 " ON $TABLE_RECORDATORIO.$COLUMN_RECORDATORIO_IDFRECUENCIA = $TABLE_FRECUENCIA.$COLUMN_FRECUENCIA_IDFRECUENCIA "
 
@@ -144,14 +148,15 @@ class DataHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME, nul
                 COLUMN_RECORDATORIO_FEHA_RECORDATORIO))
             val hora = cursor.getString(cursor.getColumnIndexOrThrow(
                 COLUMN_RECORDATORIO_HORA_RECORDATORIO))
+            val monto = cursor.getDouble(cursor.getColumnIndexOrThrow(
+                COLUMN_RECORDATORIO_MONTO_RECORDATORIO))
 
-            val nuevoRecordatorio = Recordatorio(idRecordatorio, idFrecuencia, nombre, fecha, hora)
+            val nuevoRecordatorio = Recordatorio(idRecordatorio, idFrecuencia, nombre, fecha, hora, monto)
 
             recodatorioList.add(nuevoRecordatorio)
         }
         cursor.close()
         db.close()
-        Log.i("re",recodatorioList.toString())
         return recodatorioList
     }
 }

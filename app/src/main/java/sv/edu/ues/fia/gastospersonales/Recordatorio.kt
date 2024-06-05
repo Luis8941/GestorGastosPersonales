@@ -5,5 +5,6 @@ data class Recordatorio (
     var idFrecuencia:Int,
     var nombreR: String,
     var fecha:String,
-    var hora:String
+    var hora:String,
+    var monto:Double,
 )

@@ -1,6 +1,7 @@
 package sv.edu.ues.fia.gastospersonales
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.database.sqlite.SQLiteOpenHelper
 import android.os.Bundle
 import android.view.View
@@ -22,7 +23,7 @@ class CrearRecordatorioActivity2 : AppCompatActivity() {
     private lateinit var etFecha : EditText
     private lateinit var editTxtTime : EditText
     private lateinit var btnGuardar : Button
-
+    private lateinit var editTxtMonto : EditText
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,7 +52,7 @@ class CrearRecordatorioActivity2 : AppCompatActivity() {
         editTxtdigiteNom = findViewById(R.id.digite_nom)
         etFecha = findViewById(R.id.et_fecha)
         editTxtTime = findViewById(R.id.editTextTime)
-
+        editTxtMonto = findViewById(R.id.add_monto)
 
         btnGuardar = findViewById(R.id.btn_guardar)
 
@@ -60,11 +61,13 @@ class CrearRecordatorioActivity2 : AppCompatActivity() {
             val idFrecuencia = spinnerFrecuencias.selectedItemId.toInt() + 1
             val fechaRe = etFecha.text.toString()
             val horaRe = editTxtTime.text.toString()
+            val montoRe = editTxtMonto.text.toString()
 
-            dbHelper.addRecordatorio(idFrecuencia, nombre, fechaRe, horaRe)
+            dbHelper.addRecordatorio(idFrecuencia, nombre, fechaRe, horaRe, montoRe.toDouble())
 
             Toast.makeText(this, "Recordatorio Agregado", Toast.LENGTH_SHORT).show()
             clearCamposRecordatorio()
+            goToListRecordatorio()
         }
 
         //Metodo para el llenado del Spinner Frecuencia
@@ -100,10 +103,17 @@ class CrearRecordatorioActivity2 : AppCompatActivity() {
         editTxtdigiteNom = findViewById(R.id.digite_nom)
         etFecha = findViewById(R.id.et_fecha)
         editTxtTime = findViewById(R.id.editTextTime)
+        editTxtMonto = findViewById(R.id.add_monto)
 
         editTxtdigiteNom.setText("")
         etFecha.setText("")
         editTxtTime.setText("")
         spinnerFrecuencias.setSelection(0)
+        editTxtMonto.setText("")
+    }
+
+    private fun goToListRecordatorio(){
+        val i = Intent(this, recordatorioActivity2::class.java)
+        startActivity(i)
     }
 }
