@@ -16,7 +16,7 @@ class DataHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME, nul
 
     companion object{
         private const val DATABASE_NAME = "gestorPresonalApp.db"
-        private const val DATABASE_VERSION = 2
+        private const val DATABASE_VERSION = 1
 
         // definiendo nombres de la tabla categoria
         private const val TABLE_FRECUENCIA = "Frecuencia"
@@ -64,12 +64,6 @@ class DataHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME, nul
         }
     }
 
-    /*fun comprobarBase(){
-        val db = readableDatabase
-
-        db.close()
-    }*/
-
     fun addFrecuencia(){
         val nombreFrecuencias = listOf("una vez","diario","semanal")
 
@@ -104,6 +98,26 @@ class DataHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME, nul
         db.close()
 
         return frecuenciaList
+    }
+
+    fun addRecordatorioPrecarga(){
+        val colums = arrayOf(COLUMN_RECORDATORIO_IDRECORDATORIO, COLUMN_RECORDATORIO_NOMBRE,
+            COLUMN_RECORDATORIO_IDFRECUENCIA, COLUMN_RECORDATORIO_FEHA_RECORDATORIO,
+            COLUMN_RECORDATORIO_HORA_RECORDATORIO,COLUMN_RECORDATORIO_MONTO_RECORDATORIO)
+        val db = readableDatabase
+        var cursor: Cursor? = db.query(TABLE_RECORDATORIO, colums, null, null, null, null, null)
+
+        if(cursor==null || cursor!!.count <=0){
+            val values = ContentValues()
+            val db = writableDatabase
+
+            values.put(COLUMN_RECORDATORIO_NOMBRE, "Pago de Luz")
+            values.put(COLUMN_RECORDATORIO_IDFRECUENCIA, 1 )
+            values.put(COLUMN_RECORDATORIO_FEHA_RECORDATORIO, "2024-6-20" )
+            values.put(COLUMN_RECORDATORIO_HORA_RECORDATORIO, "10:00am" )
+            values.put(COLUMN_RECORDATORIO_MONTO_RECORDATORIO, 60.0 )
+            db.insert(TABLE_RECORDATORIO, null, values)
+        }
     }
 
     fun addRecordatorio(idFrecuencia : Int, nombre : String, fecha : String, hora : String, monto : Double){

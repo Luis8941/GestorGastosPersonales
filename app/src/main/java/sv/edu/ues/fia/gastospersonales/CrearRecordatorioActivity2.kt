@@ -70,8 +70,7 @@ class CrearRecordatorioActivity2 : AppCompatActivity() {
             goToListRecordatorio()
         }
 
-        //Metodo para el llenado del Spinner Frecuencia
-        llenarTablaFrecuencia()
+        //Metodo para el llenado del Spinner
         llenarSpinner()
     }
 
@@ -87,9 +86,7 @@ class CrearRecordatorioActivity2 : AppCompatActivity() {
         DatePickerDialog(this, listener, year, month, day).show()
     }
 
-    fun llenarTablaFrecuencia(){
-        dbHelper.addFrecuencia()
-    }
+
 
     private fun llenarSpinner(){
         val nombreFrecuencia : ArrayList<String> = dbHelper.getAllFrecuencias()

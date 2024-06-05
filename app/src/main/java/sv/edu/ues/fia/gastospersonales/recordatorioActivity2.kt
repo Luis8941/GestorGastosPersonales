@@ -33,6 +33,10 @@ class recordatorioActivity2 : AppCompatActivity() {
 
         dbHelper = DataHelper(this)
 
+        //Metodo para el llenado del Spinner Frecuencia
+        llenarTablaFrecuencia()
+        llenadoInicioRecordatorio()
+
         val recycleView = findViewById<RecyclerView>(R.id.listRecyclerRecordatorio)
         recycleView.layoutManager = LinearLayoutManager(this)
 
@@ -40,6 +44,14 @@ class recordatorioActivity2 : AppCompatActivity() {
 
         val adapter = RecordatorioAdapter(data)
         recycleView.adapter = adapter
+    }
+
+    fun llenarTablaFrecuencia(){
+        dbHelper.addFrecuencia()
+    }
+
+    fun llenadoInicioRecordatorio(){
+        dbHelper.addRecordatorioPrecarga()
     }
 
     private fun listarRecordatorios():ArrayList<Recordatorio>{
