@@ -147,10 +147,10 @@
         app:iconTint="#03113A"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.934"
+        app:layout_constraintHorizontal_bias="0.896"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTime"
-        app:layout_constraintVertical_bias="0.716"
+        app:layout_constraintVertical_bias="0.427"
         app:rippleColor="#03113A"
         app:strokeColor="#03113A" />
 

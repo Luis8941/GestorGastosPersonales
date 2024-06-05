@@ -34,7 +34,9 @@
         android:layout_marginEnd="1dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recordatorioListToolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/recordatorioListToolbar"
+        tools:listitem="@layout/list_element_recordatorio"
+        tools:itemCount="5" />
 
     <Button
         android:id="@+id/btn_agregar_r"

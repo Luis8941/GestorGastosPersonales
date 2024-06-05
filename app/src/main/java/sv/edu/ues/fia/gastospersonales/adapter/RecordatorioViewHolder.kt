@@ -8,12 +8,10 @@ import sv.edu.ues.fia.gastospersonales.Recordatorio
 
 class RecordatorioViewHolder(view: View): RecyclerView.ViewHolder(view) {
 
-    val  descripcion = view.findViewById<TextView>(R.id.descripcion)
-    val  fecha_vencimiento = view.findViewById<TextView>(R.id.fecha_vencimiento)
-    val  monto = view.findViewById<TextView>(R.id.monto)
+    val  nombreRe = view.findViewById<TextView>(R.id.nombre_r)
+    val  fechaRe = view.findViewById<TextView>(R.id.fecha_r)
     fun render(recordatorio: Recordatorio) {
-        descripcion.text = recordatorio.descripcion
-        fecha_vencimiento.text = recordatorio.fecha_vencimiento
-        monto.text = recordatorio.monto
+        nombreRe.text = recordatorio.nombreR
+        fechaRe.text = recordatorio.fecha
     }
 }

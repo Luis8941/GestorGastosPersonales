@@ -30,7 +30,7 @@
                 android:orientation="vertical"
                 android:layout_marginLeft="4dp">
                 <TextView
-                    android:id="@+id/descripcion"
+                    android:id="@+id/nombre_r"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="2dp"
@@ -40,7 +40,7 @@
                     android:textStyle="bold"
                     android:layout_marginLeft="12dp"/>
                 <TextView
-                    android:id="@+id/fecha_vencimiento"
+                    android:id="@+id/fecha_r"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="10/05/2024"
